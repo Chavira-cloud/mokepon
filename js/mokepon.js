@@ -1,8 +1,20 @@
 let ataqueJugador
 let ataqueEnemigo   
+let vidasJugador=3
+let vidasEnemigo=3   
 
+/* 
+
+document es para selecionar HTML.
+getElementById es para seleccionar una etiqueta con un id.
+addEventListener es para agregar eventos, adjunto a eso el nombre de la funcion.
+innerHTML para insertar código HTML.
+createElement para crear una etiqueta de HTML.
+appendChild es para ingresar código en una etiqueta HTML padre
+
+*/
 function iniciarJuego (){
-    let botonMascotaJugador= document.getElementById('btn-mascota')
+    let botonMascotaJugador= document.getElementById('btn-mascota') 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     
     let botonFuego = document.getElementById('btn-fuego')
@@ -77,15 +89,32 @@ function ataqueAleatorioEnemigo(){
 }
 
 function combate(){
+    let spanVidasJugador= document.getElementById('vidas-jugador')
+    let spanVidasEnemigo= document.getElementById('vidas-enemigo')
+    
     if(ataqueEnemigo == ataqueJugador){
         crearMensaje("EMPATE")
     } else if ((ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA')||(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO') || 
     (ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA')){
         crearMensaje("GANASTE")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo   
     } else{
         crearMensaje("PERDISTE")
-        
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador   
     }
+
+    revisarVidas()
+}
+
+function revisarVidas(){
+    if(vidasEnemigo == 0){
+       alert('Ha Ganado tu Mascota') //Ganamos
+    }else if(vidasJugador == 0){
+        alert('Ha Perdido tu Mascota')   //Perdimos
+    }
+
 }
 
 function crearMensaje( resultado){
