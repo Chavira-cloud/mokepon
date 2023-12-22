@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Poppins:wght@300&display=swap');
+
+body{
+    font-family:'Poppins', sans-serif;
+    background-color: #041562 ;
+}
+
+#mascotas{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}  
+
+.titulo{
+    color:white;
+    font-size: 32px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.subtitulo{
+ color: white;
+ font-size: 20px;
+}
+
+.tarjetas{
+    display: flex;
+}
+
+.tareta-de-moepon{
+    width: 180px;
+    height: 100px;
+    background: #11468f;  
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.tareta-de-moepon img{
+    width: 80px;
+}
+
+input{
+    display: none;
+}
+
+#btn-mascota{
+    width: 180;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-family:'Poppins', sans-serif;
+    margin: 20px 0 0 0;
+}
