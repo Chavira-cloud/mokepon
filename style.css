@@ -32,7 +32,7 @@ body{
     height: 100px;
     background: #11468f;  
     padding: 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* nos sirve para que nos respete el width y el height y no los modifique*/
     margin: 10px;
     border-radius: 20px;
     display: flex;
@@ -58,4 +58,37 @@ input{
     color: white;
     font-family:'Poppins', sans-serif;
     margin: 20px 0 0 0;
+}
+
+#ataques{
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-ataque{
+    background-color: #11468f;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 100px;
+    color: white;
+    font-family:'Poppins', sans-serif;
+}
+
+#mensajes{
+    width: 280px;
+    background: #EEEEEE;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#boton-reiniciar{
+    border: none;
+    color: #11468f;
+    font-family:'Poppins', sans-serif;
 }
