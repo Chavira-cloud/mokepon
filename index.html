@@ -13,23 +13,23 @@
 
             <div class="tarjetas">
                 <!--For en label es para poder dar click en dispositivos mas pequeños-->
+                <input type="radio" name="mascota" id="hipodoge"/>
                 <label class="tareta-de-moepon" for="hipodoge">
                     <p>Hipodoge</p>    
                     <img src="assets/mokepons_mokepon_hipodoge_attack.png" alt="imagen de mokepon hipodoge">
                 </label> 
-                <input type="radio" name="mascota" id="hipodoge"/>
     
+                <input type="radio" name="mascota" id="capipepo"/>
                 <label class="tareta-de-moepon" for="capipepo">
                     <p>Capipepo</p>
                     <img src="assets/mokepons_mokepon_capipepo_attack.png" alt="imagen de mokepon capipepo">
                 </label>
-                <input type="radio" name="mascota" id="capipepo"/>
     
+                <input type="radio" name="mascota" id="ratigueya"/>
                 <label class="tareta-de-moepon" for="ratigueya">
                     <p>Ratigueya</p>
                     <img src="assets/mokepons_mokepon_ratigueya_attack.png" alt="imagen de mokepon ratigueya">
                 </label>
-                <input type="radio" name="mascota" id="ratigueya"/>
             </div>
 
             <button id="btn-mascota">Seleccionar</button>
@@ -39,28 +39,31 @@
             <h1 class="titulo">Mokepon</h1>
             <h2 class="subtitulo">Elige tu ataque:</h2>
 
-            <div>
+            <div class="tarjetas-ataques">
                 <button id="btn-fuego" class="btn-ataque" >Fuego 🔥</button>
                 <button id="btn-agua"  class="btn-ataque">Agua 💧 </button>
                 <button id="btn-tierra" class="btn-ataque" >Tierra 🌱</button>
             </div>
-
             
-                <div id="mensajes">
-                    <p id="resultado">Buena suerte Entrenador</p>
-                    
-                    <section id="reiniciar">
-                        <button id="boton-reiniciar">reiniciar</button>
-                    </section>
+            <div id="mensajes">
+                <p id="resultado">Buena suerte Entrenador</p>
+                
+                <section id="reiniciar">
+                    <button id="boton-reiniciar">reiniciar</button>
+                </section>
+            </div>
+
+            <div class="ataques">
+                <div class="ataques-jugador">
+                    <p id="vidas-jugador">3</p>
+                    <p id="mascota-jugador"></p>
+                    <div id="ataquesDelJugador"></div>
                 </div>
-
-        
-
-            <div>
-                <div id="ataquesDelJugador"></div>
-                <div id="ataquesDelEnemigo"></div>
-                <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-                <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo" >3</span>  vidas</p>
+                <div class="ataques-enemigo">
+                    <p id="vidas-enemigo">3</p>
+                    <p id="mascota-enemigo"></p>
+                    <div id="ataquesDelEnemigo"></div>
+                </div>
             </div>
         </section>
    

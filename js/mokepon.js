@@ -54,7 +54,7 @@ function seleccionarMascotaJugador(){
     }else if (ratigueya.checked){
         spanMascotaJugador.innerHTML ="Ratigueya"
     }else{
-        alert("NO SELECCIONASTE UNA MASCOTA",location.reload())
+        alert("NO SELECCIONASTE UNA MASCOTA")
     }
 
     seleccionMascotaEnemigo()
