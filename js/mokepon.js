@@ -1,3 +1,8 @@
+let sectionSeleccionarAtaque= document.getElementById('ataques')
+let sectionReiniciar = document.getElementById('reiniciar')
+let botonMascotaJugador= document.getElementById('btn-mascota')
+let botonReiniciar= document.getElementById('boton-reiniciar')
+
 let ataqueJugador
 let ataqueEnemigo   
 let vidasJugador=3
@@ -14,13 +19,8 @@ appendChild es para ingresar código en una etiqueta HTML padre
 
 */
 function iniciarJuego (){
-    let sectionSeleccionarAtaque= document.getElementById('ataques')
     sectionSeleccionarAtaque.style.display='none'
-
-    let sectionReiniciar = document.getElementById('reiniciar')
     sectionReiniciar.style.display = 'none'
-
-    let botonMascotaJugador= document.getElementById('btn-mascota') 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     
     let botonFuego = document.getElementById('btn-fuego')
@@ -30,7 +30,7 @@ function iniciarJuego (){
     let botonTierra = document.getElementById('btn-tierra')
     botonTierra.addEventListener('click',ataqueTierra)
 
-    let botonReiniciar= document.getElementById('boton-reiniciar')
+
     botonReiniciar.addEventListener('click', reiniciarJuego)
   
 }
