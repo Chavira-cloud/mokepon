@@ -70,7 +70,7 @@ input:checked + label {
     align-items: center;
 }
 
-.boton-de-ataque{
+.boton-ataque{
     background-color: #11468f;
     padding: 10px;
     box-sizing: border-box;
