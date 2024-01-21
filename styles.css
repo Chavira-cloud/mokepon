@@ -66,11 +66,12 @@ input:checked + label {
 }
 
 #seleccionar-ataque{
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.boton-ataque{
+.boton-de-ataque{
     background-color: #11468f;
     padding: 10px;
     box-sizing: border-box;
