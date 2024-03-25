@@ -37,6 +37,7 @@ createElement para crear una etiqueta de HTML.
 appendChild es para ingresar código en una etiqueta HTML padre
 */
 
+let jugadorId = null
 let mokepones = []
 let ataqueJugador =[]
 let ataqueEnemigo = []
@@ -187,6 +188,21 @@ function iniciarJuego() {
     
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     botonReiniciar.addEventListener('click', reiniciarJuego)
+ 
+    unirseAlJuego()
+}
+
+function unirseAlJuego(){
+    fetch("http://localhost:8080/unirse") //nos perme a realizar llamadas http 
+    .then(function(res){
+        if(res.ok){
+            res.text()
+            .then(function(resuesta){
+                console.log(resuesta)
+                jugadorId= resuesta
+            })
+        }
+    })
 }
 
 function seleccionarMascotaJugador() {
@@ -207,11 +223,25 @@ function seleccionarMascotaJugador() {
         alert('Selecciona una mascota')
     }
 
+    seleccionarMokepon(mascotaJugador)
+
     extraerAtaques(mascotaJugador)
     sectionVerMapa.style.display = 'flex'
     iniciarMapa()
     //lienzo.fillRect(5,15,20,40) crea una rectangulo dentro de canvas
     //seleccionarMascotaEnemigo()
+}
+
+function seleccionarMokepon(mascotaJugador){
+    fetch(`http://localhost:8080/mokepon/${jugadorId}`,{
+        method: "post",
+        headers: {
+            "Content-Type": "aplication/json"
+        },
+        body: JSON.stringify({
+            mokepon: mascotaJugador
+        })
+    })
 }
 
 function extraerAtaques(mascotaJugador) {
@@ -377,6 +407,8 @@ function pintarCanvas(){
         mapa.height
     )
     mascotaJugadorObjeto.pintarMokepon()
+    enviarPosicion(mascotaJugadorObjeto.x, mascotaJugadorObjeto.y)
+
     hipodogeEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
@@ -385,6 +417,19 @@ function pintarCanvas(){
         revisarColision(capipepoEnemigo)
         revisarColision(ratigueyaEnemigo)
     }
+}
+
+function enviarPosicion(x,y){
+ fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`,{
+    method: "post",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body: JSON.stringify({
+        x, //cuando la clave y el valor se llaman igual, solo se pone el nombre
+        y
+    })
+ })
 }
 
 function moverDerecha(){
